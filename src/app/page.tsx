@@ -1,13 +1,16 @@
-"use client"
-// Ideas: Quick Notes (google keep) and Long Notes (word or one note like text editor)
-// quick test
-
-import NavBar from "@/components/navBar";
+'use client'
+import NoteBlock from "@/components/noteBlock";
+import Navbar from "@/components/navBar";
+import { UserContextProvider, useUserContext } from "@/context/notesContext";
 
 export default function Home() {
   return (
-    <div>
-      <NavBar />
-    </div>
+    <UserContextProvider>
+      <div>
+        <Navbar />
+      </div>
+      <NoteBlock />
+    </UserContextProvider>
+    
   );
 }
